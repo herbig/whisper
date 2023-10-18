@@ -1,0 +1,10 @@
+{
+    "name": "private-posts",
+    "version": "0.1.0",
+    "description": "Streaming payroll",
+    "author": "Michael Herbig",
+    "license": "MIT",
+    "dependencies": {
+        "@semaphore-protocol/contracts": "^3.11.1"
+    }
+}

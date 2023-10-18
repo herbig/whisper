@@ -1,0 +1,763 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "merkleTreeRoot",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "nullifierHash",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "signal",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "externalNullifier",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[8]",
+          "name": "proof",
+          "type": "uint256[8]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "merkleTreeDepth",
+          "type": "uint256"
+        }
+      ],
+      "name": "verifyProof",
+      "outputs": [],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "verifyProof(uint256,uint256,uint256,uint256,uint256[8],uint256)": "9aca8f2a"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"merkleTreeRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nullifierHash\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"signal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"externalNullifier\",\"type\":\"uint256\"},{\"internalType\":\"uint256[8]\",\"name\":\"proof\",\"type\":\"uint256[8]\"},{\"internalType\":\"uint256\",\"name\":\"merkleTreeDepth\",\"type\":\"uint256\"}],\"name\":\"verifyProof\",\"outputs\":[],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"verifyProof(uint256,uint256,uint256,uint256,uint256[8],uint256)\":{\"details\":\"Verifies whether a Semaphore proof is valid.\",\"params\":{\"externalNullifier\":\": External nullifier.\",\"merkleTreeDepth\":\": Depth of the tree.\",\"merkleTreeRoot\":\": Root of the Merkle tree.\",\"nullifierHash\":\": Nullifier hash.\",\"proof\":\": Zero-knowledge proof.\",\"signal\":\": Semaphore signal.\"}}},\"title\":\"SemaphoreVerifier contract interface.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"node_modules/@semaphore-protocol/contracts/interfaces/ISemaphoreVerifier.sol\":\"ISemaphoreVerifier\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/=lib/openzeppelin-contracts/\",\":@semaphore-protocol/=node_modules/@semaphore-protocol/\",\":@zk-kit/=node_modules/@zk-kit/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\"]},\"sources\":{\"node_modules/@semaphore-protocol/contracts/base/Pairing.sol\":{\"keccak256\":\"0xc758747510dd614c9d003b4fe1d262de324ece56d014dcf5fc1754a1170284c5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://60a954cf205939b0e216129e1589b063298aa2c6f52a199f983b40584f972a01\",\"dweb:/ipfs/QmWnS2dehDnLqhGMmAgfSkKjSxs5dNmNVt4nHhr9t5dbkt\"]},\"node_modules/@semaphore-protocol/contracts/interfaces/ISemaphoreVerifier.sol\":{\"keccak256\":\"0xbf28519ab3f34ea0d74b2134928a5c7064645aa4e3bb9d0457d45a0c68ed3a4e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://eccf79d1ca0c904986d14df3c16d5ec0bc5edc34969e7cde28591d1ad9377586\",\"dweb:/ipfs/QmQ17AJJy4YUhmQr1n7tZQpGvqGCPXjryTFaMsnkeCF1iJ\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.4+commit.c7e474f2"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "merkleTreeRoot",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nullifierHash",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "signal",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "externalNullifier",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256[8]",
+              "name": "proof",
+              "type": "uint256[8]"
+            },
+            {
+              "internalType": "uint256",
+              "name": "merkleTreeDepth",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "verifyProof"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "verifyProof(uint256,uint256,uint256,uint256,uint256[8],uint256)": {
+            "details": "Verifies whether a Semaphore proof is valid.",
+            "params": {
+              "externalNullifier": ": External nullifier.",
+              "merkleTreeDepth": ": Depth of the tree.",
+              "merkleTreeRoot": ": Root of the Merkle tree.",
+              "nullifierHash": ": Nullifier hash.",
+              "proof": ": Zero-knowledge proof.",
+              "signal": ": Semaphore signal."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "@semaphore-protocol/=node_modules/@semaphore-protocol/",
+        "@zk-kit/=node_modules/@zk-kit/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/openzeppelin-contracts/contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphoreVerifier.sol": "ISemaphoreVerifier"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "node_modules/@semaphore-protocol/contracts/base/Pairing.sol": {
+        "keccak256": "0xc758747510dd614c9d003b4fe1d262de324ece56d014dcf5fc1754a1170284c5",
+        "urls": [
+          "bzz-raw://60a954cf205939b0e216129e1589b063298aa2c6f52a199f983b40584f972a01",
+          "dweb:/ipfs/QmWnS2dehDnLqhGMmAgfSkKjSxs5dNmNVt4nHhr9t5dbkt"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphoreVerifier.sol": {
+        "keccak256": "0xbf28519ab3f34ea0d74b2134928a5c7064645aa4e3bb9d0457d45a0c68ed3a4e",
+        "urls": [
+          "bzz-raw://eccf79d1ca0c904986d14df3c16d5ec0bc5edc34969e7cde28591d1ad9377586",
+          "dweb:/ipfs/QmQ17AJJy4YUhmQr1n7tZQpGvqGCPXjryTFaMsnkeCF1iJ"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphoreVerifier.sol",
+    "id": 45734,
+    "exportedSymbols": {
+      "ISemaphoreVerifier": [
+        45733
+      ],
+      "Pairing": [
+        44241
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "31:1022:25",
+    "nodes": [
+      {
+        "id": 45685,
+        "nodeType": "PragmaDirective",
+        "src": "31:22:25",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".4"
+        ]
+      },
+      {
+        "id": 45686,
+        "nodeType": "ImportDirective",
+        "src": "55:29:25",
+        "nodes": [],
+        "absolutePath": "node_modules/@semaphore-protocol/contracts/base/Pairing.sol",
+        "file": "../base/Pairing.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 45734,
+        "sourceUnit": 44242,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 45733,
+        "nodeType": "ContractDefinition",
+        "src": "135:917:25",
+        "nodes": [
+          {
+            "id": 45704,
+            "nodeType": "StructDefinition",
+            "src": "170:186:25",
+            "nodes": [],
+            "canonicalName": "ISemaphoreVerifier.VerificationKey",
+            "members": [
+              {
+                "constant": false,
+                "id": 45690,
+                "mutability": "mutable",
+                "name": "alfa1",
+                "nameLocation": "219:5:25",
+                "nodeType": "VariableDeclaration",
+                "scope": 45704,
+                "src": "203:21:25",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G1Point_$43865_storage_ptr",
+                  "typeString": "struct Pairing.G1Point"
+                },
+                "typeName": {
+                  "id": 45689,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 45688,
+                    "name": "Pairing.G1Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 43865,
+                    "src": "203:15:25"
+                  },
+                  "referencedDeclaration": 43865,
+                  "src": "203:15:25",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$43865_storage_ptr",
+                    "typeString": "struct Pairing.G1Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45693,
+                "mutability": "mutable",
+                "name": "beta2",
+                "nameLocation": "250:5:25",
+                "nodeType": "VariableDeclaration",
+                "scope": 45704,
+                "src": "234:21:25",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G2Point_$43874_storage_ptr",
+                  "typeString": "struct Pairing.G2Point"
+                },
+                "typeName": {
+                  "id": 45692,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 45691,
+                    "name": "Pairing.G2Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 43874,
+                    "src": "234:15:25"
+                  },
+                  "referencedDeclaration": 43874,
+                  "src": "234:15:25",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G2Point_$43874_storage_ptr",
+                    "typeString": "struct Pairing.G2Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45696,
+                "mutability": "mutable",
+                "name": "gamma2",
+                "nameLocation": "281:6:25",
+                "nodeType": "VariableDeclaration",
+                "scope": 45704,
+                "src": "265:22:25",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G2Point_$43874_storage_ptr",
+                  "typeString": "struct Pairing.G2Point"
+                },
+                "typeName": {
+                  "id": 45695,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 45694,
+                    "name": "Pairing.G2Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 43874,
+                    "src": "265:15:25"
+                  },
+                  "referencedDeclaration": 43874,
+                  "src": "265:15:25",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G2Point_$43874_storage_ptr",
+                    "typeString": "struct Pairing.G2Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45699,
+                "mutability": "mutable",
+                "name": "delta2",
+                "nameLocation": "313:6:25",
+                "nodeType": "VariableDeclaration",
+                "scope": 45704,
+                "src": "297:22:25",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G2Point_$43874_storage_ptr",
+                  "typeString": "struct Pairing.G2Point"
+                },
+                "typeName": {
+                  "id": 45698,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 45697,
+                    "name": "Pairing.G2Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 43874,
+                    "src": "297:15:25"
+                  },
+                  "referencedDeclaration": 43874,
+                  "src": "297:15:25",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G2Point_$43874_storage_ptr",
+                    "typeString": "struct Pairing.G2Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45703,
+                "mutability": "mutable",
+                "name": "IC",
+                "nameLocation": "347:2:25",
+                "nodeType": "VariableDeclaration",
+                "scope": 45704,
+                "src": "329:20:25",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_G1Point_$43865_storage_$dyn_storage_ptr",
+                  "typeString": "struct Pairing.G1Point[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 45701,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 45700,
+                      "name": "Pairing.G1Point",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 43865,
+                      "src": "329:15:25"
+                    },
+                    "referencedDeclaration": 43865,
+                    "src": "329:15:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_G1Point_$43865_storage_ptr",
+                      "typeString": "struct Pairing.G1Point"
+                    }
+                  },
+                  "id": 45702,
+                  "nodeType": "ArrayTypeName",
+                  "src": "329:17:25",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_G1Point_$43865_storage_$dyn_storage_ptr",
+                    "typeString": "struct Pairing.G1Point[]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "VerificationKey",
+            "nameLocation": "177:15:25",
+            "scope": 45733,
+            "visibility": "public"
+          },
+          {
+            "id": 45714,
+            "nodeType": "StructDefinition",
+            "src": "362:101:25",
+            "nodes": [],
+            "canonicalName": "ISemaphoreVerifier.Proof",
+            "members": [
+              {
+                "constant": false,
+                "id": 45707,
+                "mutability": "mutable",
+                "name": "A",
+                "nameLocation": "401:1:25",
+                "nodeType": "VariableDeclaration",
+                "scope": 45714,
+                "src": "385:17:25",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G1Point_$43865_storage_ptr",
+                  "typeString": "struct Pairing.G1Point"
+                },
+                "typeName": {
+                  "id": 45706,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 45705,
+                    "name": "Pairing.G1Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 43865,
+                    "src": "385:15:25"
+                  },
+                  "referencedDeclaration": 43865,
+                  "src": "385:15:25",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$43865_storage_ptr",
+                    "typeString": "struct Pairing.G1Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45710,
+                "mutability": "mutable",
+                "name": "B",
+                "nameLocation": "428:1:25",
+                "nodeType": "VariableDeclaration",
+                "scope": 45714,
+                "src": "412:17:25",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G2Point_$43874_storage_ptr",
+                  "typeString": "struct Pairing.G2Point"
+                },
+                "typeName": {
+                  "id": 45709,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 45708,
+                    "name": "Pairing.G2Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 43874,
+                    "src": "412:15:25"
+                  },
+                  "referencedDeclaration": 43874,
+                  "src": "412:15:25",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G2Point_$43874_storage_ptr",
+                    "typeString": "struct Pairing.G2Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45713,
+                "mutability": "mutable",
+                "name": "C",
+                "nameLocation": "455:1:25",
+                "nodeType": "VariableDeclaration",
+                "scope": 45714,
+                "src": "439:17:25",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G1Point_$43865_storage_ptr",
+                  "typeString": "struct Pairing.G1Point"
+                },
+                "typeName": {
+                  "id": 45712,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 45711,
+                    "name": "Pairing.G1Point",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 43865,
+                    "src": "439:15:25"
+                  },
+                  "referencedDeclaration": 43865,
+                  "src": "439:15:25",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$43865_storage_ptr",
+                    "typeString": "struct Pairing.G1Point"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Proof",
+            "nameLocation": "369:5:25",
+            "scope": 45733,
+            "visibility": "public"
+          },
+          {
+            "id": 45732,
+            "nodeType": "FunctionDefinition",
+            "src": "819:231:25",
+            "nodes": [],
+            "documentation": {
+              "id": 45715,
+              "nodeType": "StructuredDocumentation",
+              "src": "469:345:25",
+              "text": "@dev Verifies whether a Semaphore proof is valid.\n @param merkleTreeRoot: Root of the Merkle tree.\n @param nullifierHash: Nullifier hash.\n @param signal: Semaphore signal.\n @param externalNullifier: External nullifier.\n @param proof: Zero-knowledge proof.\n @param merkleTreeDepth: Depth of the tree."
+            },
+            "functionSelector": "9aca8f2a",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifyProof",
+            "nameLocation": "828:11:25",
+            "parameters": {
+              "id": 45730,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45717,
+                  "mutability": "mutable",
+                  "name": "merkleTreeRoot",
+                  "nameLocation": "857:14:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45732,
+                  "src": "849:22:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45716,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "849:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45719,
+                  "mutability": "mutable",
+                  "name": "nullifierHash",
+                  "nameLocation": "889:13:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45732,
+                  "src": "881:21:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45718,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "881:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45721,
+                  "mutability": "mutable",
+                  "name": "signal",
+                  "nameLocation": "920:6:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45732,
+                  "src": "912:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45720,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "912:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45723,
+                  "mutability": "mutable",
+                  "name": "externalNullifier",
+                  "nameLocation": "944:17:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45732,
+                  "src": "936:25:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45722,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "936:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45727,
+                  "mutability": "mutable",
+                  "name": "proof",
+                  "nameLocation": "991:5:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45732,
+                  "src": "971:25:25",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$8_calldata_ptr",
+                    "typeString": "uint256[8]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 45724,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "971:7:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 45726,
+                    "length": {
+                      "hexValue": "38",
+                      "id": 45725,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "979:1:25",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_8_by_1",
+                        "typeString": "int_const 8"
+                      },
+                      "value": "8"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "971:10:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$8_storage_ptr",
+                      "typeString": "uint256[8]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45729,
+                  "mutability": "mutable",
+                  "name": "merkleTreeDepth",
+                  "nameLocation": "1014:15:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45732,
+                  "src": "1006:23:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45728,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1006:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "839:196:25"
+            },
+            "returnParameters": {
+              "id": 45731,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1049:0:25"
+            },
+            "scope": 45733,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 45687,
+          "nodeType": "StructuredDocumentation",
+          "src": "86:49:25",
+          "text": "@title SemaphoreVerifier contract interface."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          45733
+        ],
+        "name": "ISemaphoreVerifier",
+        "nameLocation": "145:18:25",
+        "scope": 45734,
+        "usedErrors": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 25
+}

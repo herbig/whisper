@@ -1,0 +1,471 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "increment",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "number",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "setNumber",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b5060f68061001f6000396000f3fe6080604052348015600f57600080fd5b5060043610603c5760003560e01c80633fb5c1cb1460415780638381f58a146053578063d09de08a14606d575b600080fd5b6051604c3660046083565b600055565b005b605b60005481565b60405190815260200160405180910390f35b6051600080549080607c83609a565b9190505550565b6000602082840312156093578081fd5b5035919050565b600060001982141560b957634e487b7160e01b81526011600452602481fd5b506001019056fea26469706673582212208b6a91159377bb5a2c4e3060dfab245d4f666bfa0c3c4effe650e105c55b02bb64736f6c63430008040033",
+    "sourceMap": "202:192:23:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052348015600f57600080fd5b5060043610603c5760003560e01c80633fb5c1cb1460415780638381f58a146053578063d09de08a14606d575b600080fd5b6051604c3660046083565b600055565b005b605b60005481565b60405190815260200160405180910390f35b6051600080549080607c83609a565b9190505550565b6000602082840312156093578081fd5b5035919050565b600060001982141560b957634e487b7160e01b81526011600452602481fd5b506001019056fea26469706673582212208b6a91159377bb5a2c4e3060dfab245d4f666bfa0c3c4effe650e105c55b02bb64736f6c63430008040033",
+    "sourceMap": "202:192:23:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;253:80;;;;;;:::i;:::-;308:6;:18;253:80;;;225:21;;;;;;;;;355:25:25;;;343:2;328:18;225:21:23;;;;;;;339:53;;377:6;:8;;;:6;:8;;;:::i;:::-;;;;;;339:53::o;14:190:25:-;73:6;126:2;114:9;105:7;101:23;97:32;94:2;;;147:6;139;132:22;94:2;-1:-1:-1;175:23:25;;84:120;-1:-1:-1;84:120:25:o;391:236::-;430:3;-1:-1:-1;;451:17:25;;448:2;;;-1:-1:-1;;;491:33:25;;547:4;544:1;537:15;577:4;491:33;565:17;448:2;-1:-1:-1;619:1:25;608:13;;438:189::o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "increment()": "d09de08a",
+    "number()": "8381f58a",
+    "setNumber(uint256)": "3fb5c1cb"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"increment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"number\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newNumber\",\"type\":\"uint256\"}],\"name\":\"setNumber\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Counter.sol\":\"Counter\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/=lib/openzeppelin-contracts/\",\":@semaphore-protocol/=node_modules/@semaphore-protocol/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xa56ca923f70c1748830700250b19c61b70db9a683516dc5e216694a50445d99c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cac938788bc4be12101e59d45588b4e059579f4e61062e1cda8d6b06c0191b15\",\"dweb:/ipfs/QmV2JKCyjTVH3rkWNrfdJRhAT7tZ3usAN2XcnD4h53Mvih\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5\",\"dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd\",\"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"node_modules/@semaphore-protocol/contracts/interfaces/ISemaphore.sol\":{\"keccak256\":\"0xfa25980d1c35cea5ee12de59b41914c29a2684ef5f3ed63989dec09e5ad54886\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://33f9a86e3c3ea3c6aee313de96513107e51491643dd6f7c7519572855f6b3408\",\"dweb:/ipfs/QmbGW8xBVMHdKyjjqxkfk5uWw8EbgJVedCz3hzdHcxCABb\"]},\"src/Counter.sol\":{\"keccak256\":\"0xaa26348ac3b90390442c4c0946edf7647d6a40217009ae332cef5d6771ba99c7\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://542096961ff91ce83a30c6394d843c69f2171f50c25e8396ba8a93cea2833a6a\",\"dweb:/ipfs/QmWUzJarNFSGJgxBY2kQtJ9Fe5x5gn6vmnwBy9HgsnRx6c\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.4+commit.c7e474f2"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "increment"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "number",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "newNumber",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setNumber"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "@semaphore-protocol/=node_modules/@semaphore-protocol/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/openzeppelin-contracts/contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/Counter.sol": "Counter"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol": {
+        "keccak256": "0xa56ca923f70c1748830700250b19c61b70db9a683516dc5e216694a50445d99c",
+        "urls": [
+          "bzz-raw://cac938788bc4be12101e59d45588b4e059579f4e61062e1cda8d6b06c0191b15",
+          "dweb:/ipfs/QmV2JKCyjTVH3rkWNrfdJRhAT7tZ3usAN2XcnD4h53Mvih"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305",
+        "urls": [
+          "bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5",
+          "dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+        "keccak256": "0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca",
+        "urls": [
+          "bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd",
+          "dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+        "keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+        "urls": [
+          "bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+          "dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphore.sol": {
+        "keccak256": "0xfa25980d1c35cea5ee12de59b41914c29a2684ef5f3ed63989dec09e5ad54886",
+        "urls": [
+          "bzz-raw://33f9a86e3c3ea3c6aee313de96513107e51491643dd6f7c7519572855f6b3408",
+          "dweb:/ipfs/QmbGW8xBVMHdKyjjqxkfk5uWw8EbgJVedCz3hzdHcxCABb"
+        ],
+        "license": "MIT"
+      },
+      "src/Counter.sol": {
+        "keccak256": "0xaa26348ac3b90390442c4c0946edf7647d6a40217009ae332cef5d6771ba99c7",
+        "urls": [
+          "bzz-raw://542096961ff91ce83a30c6394d843c69f2171f50c25e8396ba8a93cea2833a6a",
+          "dweb:/ipfs/QmWUzJarNFSGJgxBY2kQtJ9Fe5x5gn6vmnwBy9HgsnRx6c"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/Counter.sol",
+    "id": 44218,
+    "exportedSymbols": {
+      "Counter": [
+        44217
+      ],
+      "ERC20": [
+        43906
+      ],
+      "ISemaphore": [
+        44192
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:356:23",
+    "nodes": [
+      {
+        "id": 44194,
+        "nodeType": "PragmaDirective",
+        "src": "39:23:23",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".4"
+        ]
+      },
+      {
+        "id": 44195,
+        "nodeType": "ImportDirective",
+        "src": "64:65:23",
+        "nodes": [],
+        "absolutePath": "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphore.sol",
+        "file": "@semaphore-protocol/contracts/interfaces/ISemaphore.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 44218,
+        "sourceUnit": 44193,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 44197,
+        "nodeType": "ImportDirective",
+        "src": "130:70:23",
+        "nodes": [],
+        "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "file": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 44218,
+        "sourceUnit": 43907,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 44196,
+              "name": "ERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "139:5:23",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 44217,
+        "nodeType": "ContractDefinition",
+        "src": "202:192:23",
+        "nodes": [
+          {
+            "id": 44199,
+            "nodeType": "VariableDeclaration",
+            "src": "225:21:23",
+            "nodes": [],
+            "constant": false,
+            "functionSelector": "8381f58a",
+            "mutability": "mutable",
+            "name": "number",
+            "nameLocation": "240:6:23",
+            "scope": 44217,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 44198,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "225:7:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 44209,
+            "nodeType": "FunctionDefinition",
+            "src": "253:80:23",
+            "nodes": [],
+            "body": {
+              "id": 44208,
+              "nodeType": "Block",
+              "src": "298:35:23",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 44206,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 44204,
+                      "name": "number",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 44199,
+                      "src": "308:6:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 44205,
+                      "name": "newNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 44201,
+                      "src": "317:9:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "308:18:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 44207,
+                  "nodeType": "ExpressionStatement",
+                  "src": "308:18:23"
+                }
+              ]
+            },
+            "functionSelector": "3fb5c1cb",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setNumber",
+            "nameLocation": "262:9:23",
+            "parameters": {
+              "id": 44202,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 44201,
+                  "mutability": "mutable",
+                  "name": "newNumber",
+                  "nameLocation": "280:9:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 44209,
+                  "src": "272:17:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 44200,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "272:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "271:19:23"
+            },
+            "returnParameters": {
+              "id": 44203,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "298:0:23"
+            },
+            "scope": 44217,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 44216,
+            "nodeType": "FunctionDefinition",
+            "src": "339:53:23",
+            "nodes": [],
+            "body": {
+              "id": 44215,
+              "nodeType": "Block",
+              "src": "367:25:23",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 44213,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "377:8:23",
+                    "subExpression": {
+                      "id": 44212,
+                      "name": "number",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 44199,
+                      "src": "377:6:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 44214,
+                  "nodeType": "ExpressionStatement",
+                  "src": "377:8:23"
+                }
+              ]
+            },
+            "functionSelector": "d09de08a",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "increment",
+            "nameLocation": "348:9:23",
+            "parameters": {
+              "id": 44210,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "357:2:23"
+            },
+            "returnParameters": {
+              "id": 44211,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "367:0:23"
+            },
+            "scope": 44217,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          44217
+        ],
+        "name": "Counter",
+        "nameLocation": "211:7:23",
+        "scope": 44218,
+        "usedErrors": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 23
+}

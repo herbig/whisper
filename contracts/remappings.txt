@@ -1,0 +1,3 @@
+@openzeppelin/=lib/openzeppelin-contracts
+@semaphore-protocol/=node_modules/@semaphore-protocol
+@zk-kit/=node_modules/@zk-kit

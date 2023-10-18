@@ -1,0 +1,2676 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "Semaphore__CallerIsNotTheGroupAdmin",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Semaphore__MerkleTreeDepthIsNotSupported",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Semaphore__MerkleTreeRootIsExpired",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Semaphore__MerkleTreeRootIsNotPartOfTheGroup",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Semaphore__YouAreUsingTheSameNillifierTwice",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "oldAdmin",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "GroupAdminUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "oldMerkleTreeDuration",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newMerkleTreeDuration",
+          "type": "uint256"
+        }
+      ],
+      "name": "GroupMerkleTreeDurationUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "merkleTreeRoot",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "nullifierHash",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "externalNullifier",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "signal",
+          "type": "uint256"
+        }
+      ],
+      "name": "ProofVerified",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "identityCommitment",
+          "type": "uint256"
+        }
+      ],
+      "name": "addMember",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "identityCommitments",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "addMembers",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "depth",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "admin",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "merkleTreeRootDuration",
+          "type": "uint256"
+        }
+      ],
+      "name": "createGroup",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "depth",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "admin",
+          "type": "address"
+        }
+      ],
+      "name": "createGroup",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "identityCommitment",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "proofSiblings",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint8[]",
+          "name": "proofPathIndices",
+          "type": "uint8[]"
+        }
+      ],
+      "name": "removeMember",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "updateGroupAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "newMerkleTreeDuration",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateGroupMerkleTreeDuration",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "identityCommitment",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "newIdentityCommitment",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "proofSiblings",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint8[]",
+          "name": "proofPathIndices",
+          "type": "uint8[]"
+        }
+      ],
+      "name": "updateMember",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "groupId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "merkleTreeRoot",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "signal",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "nullifierHash",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "externalNullifier",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[8]",
+          "name": "proof",
+          "type": "uint256[8]"
+        }
+      ],
+      "name": "verifyProof",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addMember(uint256,uint256)": "1783efc3",
+    "addMembers(uint256,uint256[])": "04245371",
+    "createGroup(uint256,uint256,address)": "9c112141",
+    "createGroup(uint256,uint256,address,uint256)": "65e54f83",
+    "removeMember(uint256,uint256,uint256[],uint8[])": "43989f85",
+    "updateGroupAdmin(uint256,address)": "568ee826",
+    "updateGroupMerkleTreeDuration(uint256,uint256)": "fcf0b6ec",
+    "updateMember(uint256,uint256,uint256,uint256[],uint8[])": "ec45622a",
+    "verifyProof(uint256,uint256,uint256,uint256,uint256,uint256[8])": "3bc778e3"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"Semaphore__CallerIsNotTheGroupAdmin\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Semaphore__MerkleTreeDepthIsNotSupported\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Semaphore__MerkleTreeRootIsExpired\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Semaphore__MerkleTreeRootIsNotPartOfTheGroup\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Semaphore__YouAreUsingTheSameNillifierTwice\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"oldAdmin\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"GroupAdminUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"oldMerkleTreeDuration\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMerkleTreeDuration\",\"type\":\"uint256\"}],\"name\":\"GroupMerkleTreeDurationUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"merkleTreeRoot\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"nullifierHash\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"externalNullifier\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"signal\",\"type\":\"uint256\"}],\"name\":\"ProofVerified\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"identityCommitment\",\"type\":\"uint256\"}],\"name\":\"addMember\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"internalType\":\"uint256[]\",\"name\":\"identityCommitments\",\"type\":\"uint256[]\"}],\"name\":\"addMembers\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"depth\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"merkleTreeRootDuration\",\"type\":\"uint256\"}],\"name\":\"createGroup\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"depth\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"admin\",\"type\":\"address\"}],\"name\":\"createGroup\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"identityCommitment\",\"type\":\"uint256\"},{\"internalType\":\"uint256[]\",\"name\":\"proofSiblings\",\"type\":\"uint256[]\"},{\"internalType\":\"uint8[]\",\"name\":\"proofPathIndices\",\"type\":\"uint8[]\"}],\"name\":\"removeMember\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"updateGroupAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"newMerkleTreeDuration\",\"type\":\"uint256\"}],\"name\":\"updateGroupMerkleTreeDuration\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"identityCommitment\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"newIdentityCommitment\",\"type\":\"uint256\"},{\"internalType\":\"uint256[]\",\"name\":\"proofSiblings\",\"type\":\"uint256[]\"},{\"internalType\":\"uint8[]\",\"name\":\"proofPathIndices\",\"type\":\"uint8[]\"}],\"name\":\"updateMember\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"groupId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"merkleTreeRoot\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"signal\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nullifierHash\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"externalNullifier\",\"type\":\"uint256\"},{\"internalType\":\"uint256[8]\",\"name\":\"proof\",\"type\":\"uint256[8]\"}],\"name\":\"verifyProof\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"GroupAdminUpdated(uint256,address,address)\":{\"details\":\"Emitted when an admin is assigned to a group.\",\"params\":{\"groupId\":\": Id of the group.\",\"newAdmin\":\": New admin of the group.\",\"oldAdmin\":\": Old admin of the group.\"}},\"GroupMerkleTreeDurationUpdated(uint256,uint256,uint256)\":{\"details\":\"Emitted when the Merkle tree duration of a group is updated.\",\"params\":{\"groupId\":\": Id of the group.\",\"newMerkleTreeDuration\":\": New Merkle tree duration of the group.\",\"oldMerkleTreeDuration\":\": Old Merkle tree duration of the group.\"}},\"ProofVerified(uint256,uint256,uint256,uint256,uint256)\":{\"details\":\"Emitted when a Semaphore proof is verified.\",\"params\":{\"externalNullifier\":\": External nullifier.\",\"groupId\":\": Id of the group.\",\"merkleTreeRoot\":\": Root of the Merkle tree.\",\"nullifierHash\":\": Nullifier hash.\",\"signal\":\": Semaphore signal.\"}}},\"kind\":\"dev\",\"methods\":{\"addMember(uint256,uint256)\":{\"details\":\"Adds a new member to an existing group.\",\"params\":{\"groupId\":\": Id of the group.\",\"identityCommitment\":\": New identity commitment.\"}},\"addMembers(uint256,uint256[])\":{\"details\":\"Adds new members to an existing group.\",\"params\":{\"groupId\":\": Id of the group.\",\"identityCommitments\":\": New identity commitments.\"}},\"createGroup(uint256,uint256,address)\":{\"details\":\"Creates a new group. Only the admin will be able to add or remove members.\",\"params\":{\"admin\":\": Admin of the group.\",\"depth\":\": Depth of the tree.\",\"groupId\":\": Id of the group.\"}},\"createGroup(uint256,uint256,address,uint256)\":{\"details\":\"Creates a new group. Only the admin will be able to add or remove members.\",\"params\":{\"admin\":\": Admin of the group.\",\"depth\":\": Depth of the tree.\",\"groupId\":\": Id of the group.\",\"merkleTreeRootDuration\":\": Time before the validity of a root expires.\"}},\"removeMember(uint256,uint256,uint256[],uint8[])\":{\"details\":\"Removes a member from an existing group. A proof of membership is needed to check if the node to be removed is part of the tree.\",\"params\":{\"groupId\":\": Id of the group.\",\"identityCommitment\":\": Identity commitment to be removed.\",\"proofPathIndices\":\": Path of the proof of membership.\",\"proofSiblings\":\": Array of the sibling nodes of the proof of membership.\"}},\"updateGroupAdmin(uint256,address)\":{\"details\":\"Updates the group admin.\",\"params\":{\"groupId\":\": Id of the group.\",\"newAdmin\":\": New admin of the group.\"}},\"updateGroupMerkleTreeDuration(uint256,uint256)\":{\"details\":\"Updates the group Merkle tree duration.\",\"params\":{\"groupId\":\": Id of the group.\",\"newMerkleTreeDuration\":\": New Merkle tree duration.\"}},\"updateMember(uint256,uint256,uint256,uint256[],uint8[])\":{\"details\":\"Updates an identity commitment of an existing group. A proof of membership is needed to check if the node to be updated is part of the tree.\",\"params\":{\"groupId\":\": Id of the group.\",\"identityCommitment\":\": Existing identity commitment to be updated.\",\"newIdentityCommitment\":\": New identity commitment.\",\"proofPathIndices\":\": Path of the proof of membership.\",\"proofSiblings\":\": Array of the sibling nodes of the proof of membership.\"}},\"verifyProof(uint256,uint256,uint256,uint256,uint256,uint256[8])\":{\"details\":\"Saves the nullifier hash to avoid double signaling and emits an event if the zero-knowledge proof is valid.\",\"params\":{\"externalNullifier\":\": External nullifier.\",\"groupId\":\": Id of the group.\",\"merkleTreeRoot\":\": Root of the Merkle tree.\",\"nullifierHash\":\": Nullifier hash.\",\"proof\":\": Zero-knowledge proof.\",\"signal\":\": Semaphore signal.\"}}},\"title\":\"Semaphore contract interface.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"node_modules/@semaphore-protocol/contracts/interfaces/ISemaphore.sol\":\"ISemaphore\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/=lib/openzeppelin-contracts/\",\":@semaphore-protocol/=node_modules/@semaphore-protocol/\",\":@zk-kit/=node_modules/@zk-kit/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\"]},\"sources\":{\"node_modules/@semaphore-protocol/contracts/interfaces/ISemaphore.sol\":{\"keccak256\":\"0xfa25980d1c35cea5ee12de59b41914c29a2684ef5f3ed63989dec09e5ad54886\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://33f9a86e3c3ea3c6aee313de96513107e51491643dd6f7c7519572855f6b3408\",\"dweb:/ipfs/QmbGW8xBVMHdKyjjqxkfk5uWw8EbgJVedCz3hzdHcxCABb\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.4+commit.c7e474f2"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Semaphore__CallerIsNotTheGroupAdmin"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Semaphore__MerkleTreeDepthIsNotSupported"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Semaphore__MerkleTreeRootIsExpired"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Semaphore__MerkleTreeRootIsNotPartOfTheGroup"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "Semaphore__YouAreUsingTheSameNillifierTwice"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "oldAdmin",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "newAdmin",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "GroupAdminUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "oldMerkleTreeDuration",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "newMerkleTreeDuration",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "GroupMerkleTreeDurationUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "merkleTreeRoot",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "nullifierHash",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "externalNullifier",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "signal",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "ProofVerified",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "identityCommitment",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addMember"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "identityCommitments",
+              "type": "uint256[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addMembers"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "depth",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "admin",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "merkleTreeRootDuration",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "createGroup"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "depth",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "admin",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "createGroup"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "identityCommitment",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "proofSiblings",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "uint8[]",
+              "name": "proofPathIndices",
+              "type": "uint8[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "removeMember"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "newAdmin",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateGroupAdmin"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "newMerkleTreeDuration",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateGroupMerkleTreeDuration"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "identityCommitment",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "newIdentityCommitment",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "proofSiblings",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "uint8[]",
+              "name": "proofPathIndices",
+              "type": "uint8[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateMember"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "groupId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "merkleTreeRoot",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "signal",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "nullifierHash",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "externalNullifier",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256[8]",
+              "name": "proof",
+              "type": "uint256[8]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "verifyProof"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addMember(uint256,uint256)": {
+            "details": "Adds a new member to an existing group.",
+            "params": {
+              "groupId": ": Id of the group.",
+              "identityCommitment": ": New identity commitment."
+            }
+          },
+          "addMembers(uint256,uint256[])": {
+            "details": "Adds new members to an existing group.",
+            "params": {
+              "groupId": ": Id of the group.",
+              "identityCommitments": ": New identity commitments."
+            }
+          },
+          "createGroup(uint256,uint256,address)": {
+            "details": "Creates a new group. Only the admin will be able to add or remove members.",
+            "params": {
+              "admin": ": Admin of the group.",
+              "depth": ": Depth of the tree.",
+              "groupId": ": Id of the group."
+            }
+          },
+          "createGroup(uint256,uint256,address,uint256)": {
+            "details": "Creates a new group. Only the admin will be able to add or remove members.",
+            "params": {
+              "admin": ": Admin of the group.",
+              "depth": ": Depth of the tree.",
+              "groupId": ": Id of the group.",
+              "merkleTreeRootDuration": ": Time before the validity of a root expires."
+            }
+          },
+          "removeMember(uint256,uint256,uint256[],uint8[])": {
+            "details": "Removes a member from an existing group. A proof of membership is needed to check if the node to be removed is part of the tree.",
+            "params": {
+              "groupId": ": Id of the group.",
+              "identityCommitment": ": Identity commitment to be removed.",
+              "proofPathIndices": ": Path of the proof of membership.",
+              "proofSiblings": ": Array of the sibling nodes of the proof of membership."
+            }
+          },
+          "updateGroupAdmin(uint256,address)": {
+            "details": "Updates the group admin.",
+            "params": {
+              "groupId": ": Id of the group.",
+              "newAdmin": ": New admin of the group."
+            }
+          },
+          "updateGroupMerkleTreeDuration(uint256,uint256)": {
+            "details": "Updates the group Merkle tree duration.",
+            "params": {
+              "groupId": ": Id of the group.",
+              "newMerkleTreeDuration": ": New Merkle tree duration."
+            }
+          },
+          "updateMember(uint256,uint256,uint256,uint256[],uint8[])": {
+            "details": "Updates an identity commitment of an existing group. A proof of membership is needed to check if the node to be updated is part of the tree.",
+            "params": {
+              "groupId": ": Id of the group.",
+              "identityCommitment": ": Existing identity commitment to be updated.",
+              "newIdentityCommitment": ": New identity commitment.",
+              "proofPathIndices": ": Path of the proof of membership.",
+              "proofSiblings": ": Array of the sibling nodes of the proof of membership."
+            }
+          },
+          "verifyProof(uint256,uint256,uint256,uint256,uint256,uint256[8])": {
+            "details": "Saves the nullifier hash to avoid double signaling and emits an event if the zero-knowledge proof is valid.",
+            "params": {
+              "externalNullifier": ": External nullifier.",
+              "groupId": ": Id of the group.",
+              "merkleTreeRoot": ": Root of the Merkle tree.",
+              "nullifierHash": ": Nullifier hash.",
+              "proof": ": Zero-knowledge proof.",
+              "signal": ": Semaphore signal."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/=lib/openzeppelin-contracts/",
+        "@semaphore-protocol/=node_modules/@semaphore-protocol/",
+        "@zk-kit/=node_modules/@zk-kit/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/openzeppelin-contracts/contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphore.sol": "ISemaphore"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphore.sol": {
+        "keccak256": "0xfa25980d1c35cea5ee12de59b41914c29a2684ef5f3ed63989dec09e5ad54886",
+        "urls": [
+          "bzz-raw://33f9a86e3c3ea3c6aee313de96513107e51491643dd6f7c7519572855f6b3408",
+          "dweb:/ipfs/QmbGW8xBVMHdKyjjqxkfk5uWw8EbgJVedCz3hzdHcxCABb"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphore.sol",
+    "id": 45608,
+    "exportedSymbols": {
+      "ISemaphore": [
+        45607
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "31:5479:23",
+    "nodes": [
+      {
+        "id": 45448,
+        "nodeType": "PragmaDirective",
+        "src": "31:22:23",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".4"
+        ]
+      },
+      {
+        "id": 45607,
+        "nodeType": "ContractDefinition",
+        "src": "96:5413:23",
+        "nodes": [
+          {
+            "id": 45451,
+            "nodeType": "ErrorDefinition",
+            "src": "123:44:23",
+            "nodes": [],
+            "name": "Semaphore__CallerIsNotTheGroupAdmin",
+            "nameLocation": "129:35:23",
+            "parameters": {
+              "id": 45450,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "164:2:23"
+            }
+          },
+          {
+            "id": 45453,
+            "nodeType": "ErrorDefinition",
+            "src": "172:49:23",
+            "nodes": [],
+            "name": "Semaphore__MerkleTreeDepthIsNotSupported",
+            "nameLocation": "178:40:23",
+            "parameters": {
+              "id": 45452,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "218:2:23"
+            }
+          },
+          {
+            "id": 45455,
+            "nodeType": "ErrorDefinition",
+            "src": "226:43:23",
+            "nodes": [],
+            "name": "Semaphore__MerkleTreeRootIsExpired",
+            "nameLocation": "232:34:23",
+            "parameters": {
+              "id": 45454,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "266:2:23"
+            }
+          },
+          {
+            "id": 45457,
+            "nodeType": "ErrorDefinition",
+            "src": "274:53:23",
+            "nodes": [],
+            "name": "Semaphore__MerkleTreeRootIsNotPartOfTheGroup",
+            "nameLocation": "280:44:23",
+            "parameters": {
+              "id": 45456,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "324:2:23"
+            }
+          },
+          {
+            "id": 45459,
+            "nodeType": "ErrorDefinition",
+            "src": "332:52:23",
+            "nodes": [],
+            "name": "Semaphore__YouAreUsingTheSameNillifierTwice",
+            "nameLocation": "338:43:23",
+            "parameters": {
+              "id": 45458,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "381:2:23"
+            }
+          },
+          {
+            "id": 45472,
+            "nodeType": "StructDefinition",
+            "src": "476:190:23",
+            "nodes": [],
+            "canonicalName": "ISemaphore.Group",
+            "members": [
+              {
+                "constant": false,
+                "id": 45461,
+                "mutability": "mutable",
+                "name": "admin",
+                "nameLocation": "507:5:23",
+                "nodeType": "VariableDeclaration",
+                "scope": 45472,
+                "src": "499:13:23",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 45460,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "499:7:23",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45463,
+                "mutability": "mutable",
+                "name": "merkleTreeDuration",
+                "nameLocation": "530:18:23",
+                "nodeType": "VariableDeclaration",
+                "scope": 45472,
+                "src": "522:26:23",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 45462,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "522:7:23",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45467,
+                "mutability": "mutable",
+                "name": "merkleRootCreationDates",
+                "nameLocation": "586:23:23",
+                "nodeType": "VariableDeclaration",
+                "scope": 45472,
+                "src": "558:51:23",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                  "typeString": "mapping(uint256 => uint256)"
+                },
+                "typeName": {
+                  "id": 45466,
+                  "keyType": {
+                    "id": 45464,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "566:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "558:27:23",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                    "typeString": "mapping(uint256 => uint256)"
+                  },
+                  "valueType": {
+                    "id": 45465,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "577:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45471,
+                "mutability": "mutable",
+                "name": "nullifierHashes",
+                "nameLocation": "644:15:23",
+                "nodeType": "VariableDeclaration",
+                "scope": 45472,
+                "src": "619:40:23",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+                  "typeString": "mapping(uint256 => bool)"
+                },
+                "typeName": {
+                  "id": 45470,
+                  "keyType": {
+                    "id": 45468,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "627:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "619:24:23",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
+                    "typeString": "mapping(uint256 => bool)"
+                  },
+                  "valueType": {
+                    "id": 45469,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "638:4:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Group",
+            "nameLocation": "483:5:23",
+            "scope": 45607,
+            "visibility": "public"
+          },
+          {
+            "id": 45481,
+            "nodeType": "EventDefinition",
+            "src": "870:101:23",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 45473,
+              "nodeType": "StructuredDocumentation",
+              "src": "672:193:23",
+              "text": "@dev Emitted when an admin is assigned to a group.\n @param groupId: Id of the group.\n @param oldAdmin: Old admin of the group.\n @param newAdmin: New admin of the group."
+            },
+            "name": "GroupAdminUpdated",
+            "nameLocation": "876:17:23",
+            "parameters": {
+              "id": 45480,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45475,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "910:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45481,
+                  "src": "894:23:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45474,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "894:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45477,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "oldAdmin",
+                  "nameLocation": "935:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45481,
+                  "src": "919:24:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45476,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "919:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45479,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "newAdmin",
+                  "nameLocation": "961:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45481,
+                  "src": "945:24:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45478,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "945:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "893:77:23"
+            }
+          },
+          {
+            "id": 45490,
+            "nodeType": "EventDefinition",
+            "src": "1246:154:23",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 45482,
+              "nodeType": "StructuredDocumentation",
+              "src": "977:264:23",
+              "text": "@dev Emitted when the Merkle tree duration of a group is updated.\n @param groupId: Id of the group.\n @param oldMerkleTreeDuration: Old Merkle tree duration of the group.\n @param newMerkleTreeDuration: New Merkle tree duration of the group."
+            },
+            "name": "GroupMerkleTreeDurationUpdated",
+            "nameLocation": "1252:30:23",
+            "parameters": {
+              "id": 45489,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45484,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "1308:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45490,
+                  "src": "1292:23:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45483,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1292:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45486,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "oldMerkleTreeDuration",
+                  "nameLocation": "1333:21:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45490,
+                  "src": "1325:29:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45485,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1325:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45488,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "newMerkleTreeDuration",
+                  "nameLocation": "1372:21:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45490,
+                  "src": "1364:29:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45487,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1364:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1282:117:23"
+            }
+          },
+          {
+            "id": 45503,
+            "nodeType": "EventDefinition",
+            "src": "1701:197:23",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 45491,
+              "nodeType": "StructuredDocumentation",
+              "src": "1406:290:23",
+              "text": "@dev Emitted when a Semaphore proof is verified.\n @param groupId: Id of the group.\n @param merkleTreeRoot: Root of the Merkle tree.\n @param nullifierHash: Nullifier hash.\n @param externalNullifier: External nullifier.\n @param signal: Semaphore signal."
+            },
+            "name": "ProofVerified",
+            "nameLocation": "1707:13:23",
+            "parameters": {
+              "id": 45502,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45493,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "1746:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45503,
+                  "src": "1730:23:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45492,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1730:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45495,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "merkleTreeRoot",
+                  "nameLocation": "1779:14:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45503,
+                  "src": "1763:30:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45494,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1763:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45497,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "nullifierHash",
+                  "nameLocation": "1811:13:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45503,
+                  "src": "1803:21:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45496,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1803:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45499,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "externalNullifier",
+                  "nameLocation": "1850:17:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45503,
+                  "src": "1834:33:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45498,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1834:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45501,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "signal",
+                  "nameLocation": "1885:6:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45503,
+                  "src": "1877:14:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45500,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1877:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1720:177:23"
+            }
+          },
+          {
+            "id": 45521,
+            "nodeType": "FunctionDefinition",
+            "src": "2315:218:23",
+            "nodes": [],
+            "documentation": {
+              "id": 45504,
+              "nodeType": "StructuredDocumentation",
+              "src": "1904:406:23",
+              "text": "@dev Saves the nullifier hash to avoid double signaling and emits an event\n if the zero-knowledge proof is valid.\n @param groupId: Id of the group.\n @param merkleTreeRoot: Root of the Merkle tree.\n @param signal: Semaphore signal.\n @param nullifierHash: Nullifier hash.\n @param externalNullifier: External nullifier.\n @param proof: Zero-knowledge proof."
+            },
+            "functionSelector": "3bc778e3",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifyProof",
+            "nameLocation": "2324:11:23",
+            "parameters": {
+              "id": 45519,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45506,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "2353:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45521,
+                  "src": "2345:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45505,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2345:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45508,
+                  "mutability": "mutable",
+                  "name": "merkleTreeRoot",
+                  "nameLocation": "2378:14:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45521,
+                  "src": "2370:22:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45507,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2370:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45510,
+                  "mutability": "mutable",
+                  "name": "signal",
+                  "nameLocation": "2410:6:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45521,
+                  "src": "2402:14:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45509,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2402:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45512,
+                  "mutability": "mutable",
+                  "name": "nullifierHash",
+                  "nameLocation": "2434:13:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45521,
+                  "src": "2426:21:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45511,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2426:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45514,
+                  "mutability": "mutable",
+                  "name": "externalNullifier",
+                  "nameLocation": "2465:17:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45521,
+                  "src": "2457:25:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45513,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2457:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45518,
+                  "mutability": "mutable",
+                  "name": "proof",
+                  "nameLocation": "2512:5:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45521,
+                  "src": "2492:25:23",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$8_calldata_ptr",
+                    "typeString": "uint256[8]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 45515,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2492:7:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 45517,
+                    "length": {
+                      "hexValue": "38",
+                      "id": 45516,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2500:1:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_8_by_1",
+                        "typeString": "int_const 8"
+                      },
+                      "value": "8"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "2492:10:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$8_storage_ptr",
+                      "typeString": "uint256[8]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2335:188:23"
+            },
+            "returnParameters": {
+              "id": 45520,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2532:0:23"
+            },
+            "scope": 45607,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45531,
+            "nodeType": "FunctionDefinition",
+            "src": "2751:77:23",
+            "nodes": [],
+            "documentation": {
+              "id": 45522,
+              "nodeType": "StructuredDocumentation",
+              "src": "2539:207:23",
+              "text": "@dev Creates a new group. Only the admin will be able to add or remove members.\n @param groupId: Id of the group.\n @param depth: Depth of the tree.\n @param admin: Admin of the group."
+            },
+            "functionSelector": "9c112141",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createGroup",
+            "nameLocation": "2760:11:23",
+            "parameters": {
+              "id": 45529,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45524,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "2780:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45531,
+                  "src": "2772:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45523,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2772:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45526,
+                  "mutability": "mutable",
+                  "name": "depth",
+                  "nameLocation": "2797:5:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45531,
+                  "src": "2789:13:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45525,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2789:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45528,
+                  "mutability": "mutable",
+                  "name": "admin",
+                  "nameLocation": "2812:5:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45531,
+                  "src": "2804:13:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45527,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2804:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2771:47:23"
+            },
+            "returnParameters": {
+              "id": 45530,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2827:0:23"
+            },
+            "scope": 45607,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45543,
+            "nodeType": "FunctionDefinition",
+            "src": "3129:109:23",
+            "nodes": [],
+            "documentation": {
+              "id": 45532,
+              "nodeType": "StructuredDocumentation",
+              "src": "2834:290:23",
+              "text": "@dev Creates a new group. Only the admin will be able to add or remove members.\n @param groupId: Id of the group.\n @param depth: Depth of the tree.\n @param admin: Admin of the group.\n @param merkleTreeRootDuration: Time before the validity of a root expires."
+            },
+            "functionSelector": "65e54f83",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createGroup",
+            "nameLocation": "3138:11:23",
+            "parameters": {
+              "id": 45541,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45534,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "3158:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45543,
+                  "src": "3150:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45533,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3150:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45536,
+                  "mutability": "mutable",
+                  "name": "depth",
+                  "nameLocation": "3175:5:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45543,
+                  "src": "3167:13:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45535,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3167:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45538,
+                  "mutability": "mutable",
+                  "name": "admin",
+                  "nameLocation": "3190:5:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45543,
+                  "src": "3182:13:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45537,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3182:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45540,
+                  "mutability": "mutable",
+                  "name": "merkleTreeRootDuration",
+                  "nameLocation": "3205:22:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45543,
+                  "src": "3197:30:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45539,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3197:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3149:79:23"
+            },
+            "returnParameters": {
+              "id": 45542,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3237:0:23"
+            },
+            "scope": 45607,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45551,
+            "nodeType": "FunctionDefinition",
+            "src": "3372:70:23",
+            "nodes": [],
+            "documentation": {
+              "id": 45544,
+              "nodeType": "StructuredDocumentation",
+              "src": "3244:123:23",
+              "text": "@dev Updates the group admin.\n @param groupId: Id of the group.\n @param newAdmin: New admin of the group."
+            },
+            "functionSelector": "568ee826",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateGroupAdmin",
+            "nameLocation": "3381:16:23",
+            "parameters": {
+              "id": 45549,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45546,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "3406:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45551,
+                  "src": "3398:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45545,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3398:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45548,
+                  "mutability": "mutable",
+                  "name": "newAdmin",
+                  "nameLocation": "3423:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45551,
+                  "src": "3415:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45547,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3415:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3397:35:23"
+            },
+            "returnParameters": {
+              "id": 45550,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3441:0:23"
+            },
+            "scope": 45607,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45559,
+            "nodeType": "FunctionDefinition",
+            "src": "3606:96:23",
+            "nodes": [],
+            "documentation": {
+              "id": 45552,
+              "nodeType": "StructuredDocumentation",
+              "src": "3448:153:23",
+              "text": "@dev Updates the group Merkle tree duration.\n @param groupId: Id of the group.\n @param newMerkleTreeDuration: New Merkle tree duration."
+            },
+            "functionSelector": "fcf0b6ec",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateGroupMerkleTreeDuration",
+            "nameLocation": "3615:29:23",
+            "parameters": {
+              "id": 45557,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45554,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "3653:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45559,
+                  "src": "3645:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45553,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3645:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45556,
+                  "mutability": "mutable",
+                  "name": "newMerkleTreeDuration",
+                  "nameLocation": "3670:21:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45559,
+                  "src": "3662:29:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45555,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3662:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3644:48:23"
+            },
+            "returnParameters": {
+              "id": 45558,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3701:0:23"
+            },
+            "scope": 45607,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45567,
+            "nodeType": "FunctionDefinition",
+            "src": "3862:73:23",
+            "nodes": [],
+            "documentation": {
+              "id": 45560,
+              "nodeType": "StructuredDocumentation",
+              "src": "3708:149:23",
+              "text": "@dev Adds a new member to an existing group.\n @param groupId: Id of the group.\n @param identityCommitment: New identity commitment."
+            },
+            "functionSelector": "1783efc3",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addMember",
+            "nameLocation": "3871:9:23",
+            "parameters": {
+              "id": 45565,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45562,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "3889:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45567,
+                  "src": "3881:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45561,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3881:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45564,
+                  "mutability": "mutable",
+                  "name": "identityCommitment",
+                  "nameLocation": "3906:18:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45567,
+                  "src": "3898:26:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45563,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3898:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3880:45:23"
+            },
+            "returnParameters": {
+              "id": 45566,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3934:0:23"
+            },
+            "scope": 45607,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45576,
+            "nodeType": "FunctionDefinition",
+            "src": "4096:86:23",
+            "nodes": [],
+            "documentation": {
+              "id": 45568,
+              "nodeType": "StructuredDocumentation",
+              "src": "3941:150:23",
+              "text": "@dev Adds new members to an existing group.\n @param groupId: Id of the group.\n @param identityCommitments: New identity commitments."
+            },
+            "functionSelector": "04245371",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addMembers",
+            "nameLocation": "4105:10:23",
+            "parameters": {
+              "id": 45574,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45570,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "4124:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45576,
+                  "src": "4116:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45569,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4116:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45573,
+                  "mutability": "mutable",
+                  "name": "identityCommitments",
+                  "nameLocation": "4152:19:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45576,
+                  "src": "4133:38:23",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 45571,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "4133:7:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 45572,
+                    "nodeType": "ArrayTypeName",
+                    "src": "4133:9:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4115:57:23"
+            },
+            "returnParameters": {
+              "id": 45575,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4181:0:23"
+            },
+            "scope": 45607,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45592,
+            "nodeType": "FunctionDefinition",
+            "src": "4684:222:23",
+            "nodes": [],
+            "documentation": {
+              "id": 45577,
+              "nodeType": "StructuredDocumentation",
+              "src": "4188:491:23",
+              "text": "@dev Updates an identity commitment of an existing group. A proof of membership is\n needed to check if the node to be updated is part of the tree.\n @param groupId: Id of the group.\n @param identityCommitment: Existing identity commitment to be updated.\n @param newIdentityCommitment: New identity commitment.\n @param proofSiblings: Array of the sibling nodes of the proof of membership.\n @param proofPathIndices: Path of the proof of membership."
+            },
+            "functionSelector": "ec45622a",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateMember",
+            "nameLocation": "4693:12:23",
+            "parameters": {
+              "id": 45590,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45579,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "4723:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45592,
+                  "src": "4715:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45578,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4715:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45581,
+                  "mutability": "mutable",
+                  "name": "identityCommitment",
+                  "nameLocation": "4748:18:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45592,
+                  "src": "4740:26:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45580,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4740:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45583,
+                  "mutability": "mutable",
+                  "name": "newIdentityCommitment",
+                  "nameLocation": "4784:21:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45592,
+                  "src": "4776:29:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45582,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4776:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45586,
+                  "mutability": "mutable",
+                  "name": "proofSiblings",
+                  "nameLocation": "4834:13:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45592,
+                  "src": "4815:32:23",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 45584,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "4815:7:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 45585,
+                    "nodeType": "ArrayTypeName",
+                    "src": "4815:9:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45589,
+                  "mutability": "mutable",
+                  "name": "proofPathIndices",
+                  "nameLocation": "4874:16:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45592,
+                  "src": "4857:33:23",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint8_$dyn_calldata_ptr",
+                    "typeString": "uint8[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 45587,
+                      "name": "uint8",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "4857:5:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "id": 45588,
+                    "nodeType": "ArrayTypeName",
+                    "src": "4857:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint8_$dyn_storage_ptr",
+                      "typeString": "uint8[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4705:191:23"
+            },
+            "returnParameters": {
+              "id": 45591,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4905:0:23"
+            },
+            "scope": 45607,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45606,
+            "nodeType": "FunctionDefinition",
+            "src": "5324:183:23",
+            "nodes": [],
+            "documentation": {
+              "id": 45593,
+              "nodeType": "StructuredDocumentation",
+              "src": "4912:407:23",
+              "text": "@dev Removes a member from an existing group. A proof of membership is\n needed to check if the node to be removed is part of the tree.\n @param groupId: Id of the group.\n @param identityCommitment: Identity commitment to be removed.\n @param proofSiblings: Array of the sibling nodes of the proof of membership.\n @param proofPathIndices: Path of the proof of membership."
+            },
+            "functionSelector": "43989f85",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeMember",
+            "nameLocation": "5333:12:23",
+            "parameters": {
+              "id": 45604,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45595,
+                  "mutability": "mutable",
+                  "name": "groupId",
+                  "nameLocation": "5363:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45606,
+                  "src": "5355:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45594,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5355:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45597,
+                  "mutability": "mutable",
+                  "name": "identityCommitment",
+                  "nameLocation": "5388:18:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45606,
+                  "src": "5380:26:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45596,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5380:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45600,
+                  "mutability": "mutable",
+                  "name": "proofSiblings",
+                  "nameLocation": "5435:13:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45606,
+                  "src": "5416:32:23",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 45598,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "5416:7:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 45599,
+                    "nodeType": "ArrayTypeName",
+                    "src": "5416:9:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45603,
+                  "mutability": "mutable",
+                  "name": "proofPathIndices",
+                  "nameLocation": "5475:16:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45606,
+                  "src": "5458:33:23",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint8_$dyn_calldata_ptr",
+                    "typeString": "uint8[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 45601,
+                      "name": "uint8",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "5458:5:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint8",
+                        "typeString": "uint8"
+                      }
+                    },
+                    "id": 45602,
+                    "nodeType": "ArrayTypeName",
+                    "src": "5458:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint8_$dyn_storage_ptr",
+                      "typeString": "uint8[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5345:152:23"
+            },
+            "returnParameters": {
+              "id": 45605,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5506:0:23"
+            },
+            "scope": 45607,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 45449,
+          "nodeType": "StructuredDocumentation",
+          "src": "55:41:23",
+          "text": "@title Semaphore contract interface."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          45607
+        ],
+        "name": "ISemaphore",
+        "nameLocation": "106:10:23",
+        "scope": 45608,
+        "usedErrors": [
+          45451,
+          45453,
+          45455,
+          45457,
+          45459
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 23
+}
