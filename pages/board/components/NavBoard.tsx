@@ -3,7 +3,8 @@ import { Btn } from "./Btn";
 import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { FaArrowLeft } from "react-icons/fa";
-import { truncateEthAddress, useMessageBoard } from "../../utils";
+import { truncateEthAddress } from "../../utils/utils";
+import { useMessageBoard } from "../../utils/messageBoard";
 
 interface Props extends FlexProps {
     tokenAddress: string;

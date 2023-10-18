@@ -1,20 +1,13 @@
 import { Identity } from "@semaphore-protocol/identity";
 import { useAccount, useContractWrite, usePrepareContractWrite, useSignMessage, useWaitForTransaction } from "wagmi";
 import { readContract } from 'wagmi/actions'
-import { getValue, setValue, CacheExpiry } from "./cache";
+import { getValue, setValue, CacheExpiry, CacheKeys } from "./cache";
 import { MouseEventHandler, useCallback, useEffect, useState } from "react";
-import { SemaphoreProof, generateProof } from "@semaphore-protocol/proof";
+import { generateProof } from "@semaphore-protocol/proof";
 import { Group } from "@semaphore-protocol/group";
 import { SemaphoreSubgraph } from "@semaphore-protocol/data";
 import { BigNumber } from "ethers";
 import web3 from "web3/lib/commonjs/web3";
-
-/**
- * Returns a truncated eth address in the familiar '0x123...456' form.
- */
-export function truncateEthAddress(address: string): string {
-    return address.substring(0, 5) + '...' + address.substring(address.length - 3);
-}
 
 // TODO support mainnet deploy
 export const MESSAGE_BOARD_ADDRESS = '0x6eb4d090c7b7e39bdc3084faa485e00c999a3069';
@@ -33,7 +26,7 @@ export function useMessageBoard(tokenAddress: string) {
 
     useEffect(() => {
         const fetchState = async () => {
-            const identityStr: string = getValue('id12:' + tokenAddress + address);
+            const identityStr: string = getValue(CacheKeys.SEMAPHORE_ID + tokenAddress + address);
             console.log('identityStr ' + identityStr);
             const identity = identityStr ? new Identity(identityStr) : undefined;
 
@@ -41,7 +34,7 @@ export function useMessageBoard(tokenAddress: string) {
                 setButton(undefined);
             } else if (!identity) {
                 setButton({ label: 'Get ID', onClick: () => {
-                    signMessage({ message: 'private-posts' });
+                    signMessage({ message: 'whisperId:' + address + ':' + tokenAddress });
                 }});
             } else {
                 setCommitment(identity.commitment);
@@ -71,7 +64,7 @@ export function useMessageBoard(tokenAddress: string) {
 
     useEffect(() => {
         if (variables?.message && signMessageData) {
-            setValue('id12:' + tokenAddress + address, new Identity(signMessageData).toString(), CacheExpiry.NEVER);
+            setValue(CacheKeys.SEMAPHORE_ID + tokenAddress + address, new Identity(signMessageData).toString(), CacheExpiry.NEVER);
             setIdCreated(true);
         }
       }, [tokenAddress, signMessageData, variables?.message, address]
@@ -100,7 +93,7 @@ export function useGenerateProof() {
     const { address } = useAccount();
 
     const getProof = useCallback(async (tokenAddress: string, message: string) => {
-        const identityStr: string = getValue('id12:' + tokenAddress + address);
+        const identityStr: string = getValue(CacheKeys.SEMAPHORE_ID + tokenAddress + address);
         const identity = identityStr ? new Identity(identityStr) : undefined;
 
         const messageInt: BigNumber = BigNumber.from(web3.utils.soliditySha3(message));

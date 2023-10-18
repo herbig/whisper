@@ -23,12 +23,7 @@ export enum CacheExpiry {
  * add the cache key here.
  */
 export enum CacheKeys {
-  PRIVATE_KEY = 'pk',
-  USERNAME_TO_ADDRESS = 'u2a',
-  ADDRESS_TO_USERNAME = 'a2u',
-  FRIENDS = 'fr',
-  INSTALL_PROMPT_SHOWN = 'ips',
-  ALLOW_FAUCET = 'af'
+  SEMAPHORE_ID = 'id:',
 }
   
 /**
@@ -37,16 +32,10 @@ export enum CacheKeys {
  * Cache keys are not required to have a default value.
  */
 export const CACHE_DEFAULTS: { [key: string]: any; } = {
-  [CacheKeys.FRIENDS.toString()]: [{
-    address: '0x8E2695650D09FD940516d6e050D0Ba87d8deF032', // it me
-    weight: 1
-  }],
-  [CacheKeys.INSTALL_PROMPT_SHOWN.toString()]: false,
-  [CacheKeys.ALLOW_FAUCET.toString()]: true
 };
 
 function keyInternal(key: string): string {
-  return 'tboard' + key;
+  return 'whisper:' + key;
 }
 
 /**

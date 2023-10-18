@@ -2,7 +2,7 @@ import { Button, Card, CardProps, Flex, Spacer, Textarea } from "@chakra-ui/reac
 import { Btn } from "./Btn";
 import { Crd } from "./Crd";
 import { useState } from "react";
-import { useGenerateProof } from "../../utils";
+import { useGenerateProof } from "../../utils/messageBoard";
 
 interface Props extends CardProps {
   tokenAddress: string;

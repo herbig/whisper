@@ -1,13 +1,14 @@
 import { Flex, Center } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { isAddress } from 'web3-validator';
-import { MESSAGE_BOARD_ABI, MESSAGE_BOARD_ADDRESS, truncateEthAddress, useMessageBoard } from "../utils";
 import { MessageInput } from "./components/MessageInput";
 import { MessageRow } from "./components/MessageRow";
 import { Board404 } from "./components/Board404";
 import Head from "next/head";
 import { NavBoard } from "./components/NavBoard";
 import { useContractEvent } from "wagmi";
+import { truncateEthAddress } from "../utils/utils";
+import { MESSAGE_BOARD_ADDRESS, MESSAGE_BOARD_ABI } from "../utils/messageBoard";
 
 export default function Board() {
   const { asPath } = useRouter();

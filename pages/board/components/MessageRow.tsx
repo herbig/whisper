@@ -1,5 +1,5 @@
 import { Card, CardProps, Flex, Text } from "@chakra-ui/react";
-import { truncateEthAddress } from "../../utils";
+import { truncateEthAddress } from "../../utils/utils";
 import { EtherscanLink } from "./EtherscanLink";
 import { Crd } from "./Crd";
 
