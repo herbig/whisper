@@ -87,16 +87,10 @@ export function useAddCommitment(tokenAddress: string, commitment: bigint) {
     return { joinGroup: write, isLoading };
 }
 
-interface ProofData {
-    root: BigNumberish;
-    externalNullifier: BigNumberish;
-    packedProof: PackedProof;
-}
-
 export function usePostMessage(tokenAddress: string) {
     const { address } = useAccount();
     const [ message, setMessage ] = useState<string>('');
-    const [ proofData, setProofData ] = useState<ProofData>();
+    const [ proofData, setProofData ] = useState<SemaphoreProof>();
 
     const { config } = usePrepareContractWrite({
       address: MESSAGE_BOARD_ADDRESS,
@@ -105,9 +99,9 @@ export function usePostMessage(tokenAddress: string) {
       args: [
         tokenAddress, 
         message, 
-        proofData?.root, 
-        proofData?.externalNullifier, 
-        proofData?.packedProof
+        proofData?.merkleTreeRoot,
+        proofData?.nullifierHash, 
+        proofData?.proof
       ]
     });
 
@@ -116,7 +110,7 @@ export function usePostMessage(tokenAddress: string) {
         hash: data?.hash,
     });
 
-    const getProof = useCallback(async (message: string): Promise<ProofData> => {
+    const getProof = useCallback(async (message: string): Promise<SemaphoreProof> => {
         setMessage(message);
 
         const identityStr: string = getValue(CacheKeys.SEMAPHORE_ID + tokenAddress + address);
@@ -132,23 +126,13 @@ export function usePostMessage(tokenAddress: string) {
             args: [tokenAddress],
         }) as bigint;
 
-        const semaphoreSubgraph = new SemaphoreSubgraph("goerli")
+        const semaphoreSubgraph = new SemaphoreSubgraph("goerli");
         const { members } = await semaphoreSubgraph.getGroup(groupId.toString(), { members: true });
-
-        console.log('members: ' + members);
-
-        const group = new Group(1, 20, members);
-        const root = group.root;
-        const externalNullifier = root;
-
+        const group = new Group(groupId, 20, members);
         const messageInt: BigNumber = BigNumber.from(ethers.utils.solidityKeccak256([ "string", ], [message]));
-        console.log('keccak ' + ethers.utils.solidityKeccak256([ "string", ], [message]));
-        console.log('messageInt ' + messageInt);
+        const semaphoreProof = await generateProof(identity, group, groupId, messageInt);
 
-        const semaphoreProof = await generateProof(identity, group, externalNullifier, messageInt);
-        const packedProof = semaphoreProof.proof;
-
-        return { root, externalNullifier, packedProof };
+        return semaphoreProof;
 
     }, [address, tokenAddress]);
 
