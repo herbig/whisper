@@ -1293,8 +1293,8 @@
       }
     },
     "test/MessageBoard.t.sol": {
-      "lastModificationDate": 1697573055273,
-      "contentHash": "217d43c5718885fdcf37727350042abd",
+      "lastModificationDate": 1698159680142,
+      "contentHash": "b30e1201e77722431ebdd9ef82753053",
       "sourceName": "test/MessageBoard.t.sol",
       "solcConfig": {
         "settings": {

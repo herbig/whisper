@@ -3,11 +3,10 @@ import { useAccount, useContractWrite, usePrepareContractWrite, useSignMessage, 
 import { readContract } from 'wagmi/actions'
 import { getValue, setValue, CacheExpiry, CacheKeys } from "./cache";
 import { MouseEventHandler, useCallback, useEffect, useState } from "react";
-import { generateProof } from "@semaphore-protocol/proof";
-import { Group } from "@semaphore-protocol/group";
+import { PackedProof, SemaphoreProof, generateProof, } from "@semaphore-protocol/proof";
+import { BigNumberish, Group } from "@semaphore-protocol/group";
 import { SemaphoreSubgraph } from "@semaphore-protocol/data";
-import { BigNumber } from "ethers";
-import web3 from "web3/lib/commonjs/web3";
+import { BigNumber, ethers } from "ethers";
 
 // TODO support mainnet deploy
 export const MESSAGE_BOARD_ADDRESS = '0x6eb4d090c7b7e39bdc3084faa485e00c999a3069';
@@ -27,7 +26,6 @@ export function useMessageBoard(tokenAddress: string) {
     useEffect(() => {
         const fetchState = async () => {
             const identityStr: string = getValue(CacheKeys.SEMAPHORE_ID + tokenAddress + address);
-            console.log('identityStr ' + identityStr);
             const identity = identityStr ? new Identity(identityStr) : undefined;
 
             if (!address) {
@@ -89,60 +87,86 @@ export function useAddCommitment(tokenAddress: string, commitment: bigint) {
     return { joinGroup: write, isLoading };
 }
 
-export function useGenerateProof() {
-    const { address } = useAccount();
-
-    const getProof = useCallback(async (tokenAddress: string, message: string) => {
-        const identityStr: string = getValue(CacheKeys.SEMAPHORE_ID + tokenAddress + address);
-        const identity = identityStr ? new Identity(identityStr) : undefined;
-
-        const messageInt: BigNumber = BigNumber.from(web3.utils.soliditySha3(message));
-        console.log('messageInt ' + messageInt);
-
-        if (identity) {
-
-            const groupId = await readContract({
-                address: MESSAGE_BOARD_ADDRESS,
-                abi: MESSAGE_BOARD_ABI,
-                functionName: 'getGroupId',
-                args: [tokenAddress],
-            }) as bigint;
-
-            console.log('groupId ' +  groupId);
-
-            const semaphoreSubgraph = new SemaphoreSubgraph("goerli")
-            const { members } = await semaphoreSubgraph.getGroup(groupId.toString(), { members: true });
-
-            const group = new Group(1, 20, members);
-            const externalNullifier = group.root;
-
-            const proof = await generateProof(identity, group, externalNullifier, messageInt);
-
-            return proof;
-        }
-    }, [address]);
-
-    return getProof;
+interface ProofData {
+    root: BigNumberish;
+    externalNullifier: BigNumberish;
+    packedProof: PackedProof;
 }
 
-    // function postMessage(
-    //     address tokenAddress,
-    //     uint256 message,
-    //     uint256 merkleTreeRoot,
-    //     uint256 nullifierHash,
-    //     uint256[8] calldata proof
-    // )
 export function usePostMessage(tokenAddress: string) {
+    const { address } = useAccount();
+    const [ message, setMessage ] = useState<string>('');
+    const [ proofData, setProofData ] = useState<ProofData>();
+
     const { config } = usePrepareContractWrite({
       address: MESSAGE_BOARD_ADDRESS,
       abi: MESSAGE_BOARD_ABI,
       functionName: 'postMessage',
-      args: [tokenAddress],
+      args: [
+        tokenAddress, 
+        message, 
+        proofData?.root, 
+        proofData?.externalNullifier, 
+        proofData?.packedProof
+      ]
     });
+
     const { data, write } = useContractWrite(config);
     const { isLoading, isSuccess } = useWaitForTransaction({
         hash: data?.hash,
     });
+
+    const getProof = useCallback(async (message: string): Promise<ProofData> => {
+        setMessage(message);
+
+        const identityStr: string = getValue(CacheKeys.SEMAPHORE_ID + tokenAddress + address);
+        const identity = new Identity(identityStr);
+
+        console.log('identity: ' + identity.commitment);
+
+        // TODO we should be able to determine this off chain..
+        const groupId = await readContract({
+            address: MESSAGE_BOARD_ADDRESS,
+            abi: MESSAGE_BOARD_ABI,
+            functionName: 'getGroupId',
+            args: [tokenAddress],
+        }) as bigint;
+
+        const semaphoreSubgraph = new SemaphoreSubgraph("goerli")
+        const { members } = await semaphoreSubgraph.getGroup(groupId.toString(), { members: true });
+
+        console.log('members: ' + members);
+
+        const group = new Group(1, 20, members);
+        const root = group.root;
+        const externalNullifier = root;
+
+        const messageInt: BigNumber = BigNumber.from(ethers.utils.solidityKeccak256([ "string", ], [message]));
+        console.log('keccak ' + ethers.utils.solidityKeccak256([ "string", ], [message]));
+        console.log('messageInt ' + messageInt);
+
+        const semaphoreProof = await generateProof(identity, group, externalNullifier, messageInt);
+        const packedProof = semaphoreProof.proof;
+
+        return { root, externalNullifier, packedProof };
+
+    }, [address, tokenAddress]);
+
+    const postMessage = useCallback(async (message: string) => {
+        const proofData = await getProof(message);
+        console.log("proof created!");
+        setProofData(proofData);
+    }, [getProof]);
+
+    useEffect(() => {
+        
+        // once the transaction is set up, call the contract
+        if (!!write) {
+            write();
+        }
+
+      }, [write]
+    );
     
-    return { postMessage: write, isLoading };
+    return { postMessage };
 }

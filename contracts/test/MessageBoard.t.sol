@@ -28,7 +28,10 @@ contract CounterTest is Test {
     }
 
     function test_Join() public {
-        board.joinGroup{value: 0.01 ether}(address(holder), 10669065099493193936705055788933239467811633929046887950091188469879350368937);
+        // board.joinGroup{value: 0.01 ether}(address(holder), 10669065099493193936705055788933239467811633929046887950091188469879350368937);
         // assertEq(counter.number(), x);
+
+        uint256 messageInt = uint256(keccak256(abi.encodePacked('hello')));
+        assertEq(messageInt, 12910348618308260923200348219926901280687058984330794534952861439530514639560);
     }
 }

@@ -2,7 +2,7 @@ import { Button, Card, CardProps, Flex, Spacer, Textarea } from "@chakra-ui/reac
 import { Btn } from "./Btn";
 import { Crd } from "./Crd";
 import { useState } from "react";
-import { useGenerateProof } from "../../utils/messageBoard";
+import { usePostMessage } from "../../utils/messageBoard";
 
 interface Props extends CardProps {
   tokenAddress: string;
@@ -10,11 +10,10 @@ interface Props extends CardProps {
 
 export function MessageInput({ tokenAddress, ...rest }: Props) {
     const [ value, setValue ] = useState<string>('');
-    const getProof = useGenerateProof();
+    const { postMessage } = usePostMessage(tokenAddress);
 
     const onSubmit = async () => {
-      const proof = await getProof(tokenAddress, value);
-      console.log('proof: ' + proof);
+      const proof = postMessage(value);
     };
 
     return (

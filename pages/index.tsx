@@ -69,28 +69,8 @@ function FeatureCard({ name, address, imageUrl }: {name: string; address: string
 const features: FeaturedToken[] = [
   {
     name: 'TEST',
-    address: '0xc6130d7ea0DD5cC9D6AaC767B10058D28d9E1cE1',
+    address: '0xd563DC02Abf0eD762B84ed117aF3b2758ee6574E',
     imageUrl: 'https://hips.hearstapps.com/hmg-prod/images/how-to-keep-ducks-call-ducks-1615457181.jpg'
-  },
-  {
-    name: 'USDC',
-    address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-    imageUrl: 'https://cryptologos.cc/logos/usd-coin-usdc-logo.png'
-  },
-  {
-    name: 'BAYC',
-    address: '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D',
-    imageUrl: 'https://pbs.twimg.com/media/FD_-DjdXwAYsCml.jpg'
-  },
-  {
-    name: 'BAYC',
-    address: '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D',
-    imageUrl: 'https://pbs.twimg.com/media/FD_-DjdXwAYsCml.jpg'
-  },
-  {
-    name: 'BAYC',
-    address: '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D',
-    imageUrl: 'https://pbs.twimg.com/media/FD_-DjdXwAYsCml.jpg'
   },
 ];
 
